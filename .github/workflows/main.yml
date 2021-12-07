@@ -16,6 +16,6 @@ jobs:
         # 参照auto-create-issuse-action的说明文档
         uses: OSpoon/auto-create-issuse-action@master
         with:
-          token: ${{secrets.TOKEN}}
+          token: ${{secrets.AUTO_TOKEN}}
           owner: OSpoon
           repo: auto-create-issuse-action
