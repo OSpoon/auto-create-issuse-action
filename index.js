@@ -29,12 +29,13 @@ function getTitle() {
 }
 
 function getBody() {
-  return `
-    ### 今日任务：
-    - [ ] 任务一：
-    - [ ] 任务二：
-    - [ ] 任务三：
-  `;
+  return 
+`
+### 今日任务：
+- [ ] 任务一：
+- [ ] 任务二：
+- [ ] 任务三：
+`;
 }
 
 function getDate() {
