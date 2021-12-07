@@ -1,0 +1,21 @@
+# 触发条件代码push后执行
+on: [push]
+
+# 执行工作列表
+jobs:
+  # 执行的任务（自动创建issuse）
+  auto-create-issuse:
+    # 运行环境为最新ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      # ①拉取代码
+      - name: Checkout
+        uses: actions/checkout@v2
+      # create issuse
+      - name: create issuse step
+        # 参照auto-create-issuse-action的说明文档
+        uses: OSpoon/auto-create-issuse-action@master
+        with:
+          token: ${{secrets.TOKEN}}
+          owner: OSpoon
+          repo: auto-create-issuse-action
