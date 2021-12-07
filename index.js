@@ -3,7 +3,6 @@ const github = require("@actions/github");
 const core = require("@actions/core");
 const dayjs = require("dayjs");
 const fs = require("fs");
-const path = require("path");
 
 // 接收输入参数
 const token = core.getInput("token");
@@ -31,8 +30,7 @@ function getTitle() {
 }
 
 function getBody() {
-  const url = path.relative(__dirname, "template.md");
-  return fs.readFileSync(url, "utf-8");
+  return fs.readFileSync('./template.md', "utf-8");
 }
 
 function getDate() {

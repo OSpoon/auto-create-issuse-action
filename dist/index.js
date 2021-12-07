@@ -8454,7 +8454,6 @@ const github = __nccwpck_require__(5438);
 const core = __nccwpck_require__(2186);
 const dayjs = __nccwpck_require__(7401);
 const fs = __nccwpck_require__(7147);
-const path = __nccwpck_require__(1017);
 
 // 接收输入参数
 const token = core.getInput("token");
@@ -8482,8 +8481,7 @@ function getTitle() {
 }
 
 function getBody() {
-  const url = path.relative(__dirname, "template.md");
-  return fs.readFileSync(url, "utf-8");
+  return fs.readFileSync('./template.md', "utf-8");
 }
 
 function getDate() {
