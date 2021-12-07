@@ -2,6 +2,8 @@
 const github = require("@actions/github");
 const core = require("@actions/core");
 const dayjs = require("dayjs");
+const fs = require("fs");
+const path = require("path");
 
 // 接收输入参数
 const token = core.getInput("token");
@@ -29,13 +31,8 @@ function getTitle() {
 }
 
 function getBody() {
-  return 
-`
-### 今日任务：
-- [ ] 任务一：
-- [ ] 任务二：
-- [ ] 任务三：
-`;
+  const url = path.relative(__dirname, "template.md");
+  return fs.readFileSync(url, "utf-8");
 }
 
 function getDate() {
