@@ -1,0 +1,18 @@
+name: "auto-create-issuse-action"
+description: "一个自动创建issuse的action"
+# 定义输入参数
+inputs:
+  token:
+    description: "Personal access tokens"
+    required: true
+  owner:
+    description: "项目作者"
+    required: true
+  repo:
+    description: "仓库名称"
+    required: true
+runs:
+  # 脚本运行环境（按官方文档给的12版本来使用）
+  using: "node12"
+  # 脚本执行入口（这里我们要用@vercel/ncc编译）
+  main: "dist/index.js"
