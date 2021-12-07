@@ -1,6 +1,9 @@
 # 触发条件代码push后执行
-on: [push]
-
+# on: [push]
+on:
+  schedule:
+    # UTC 时间
+    - cron: "1 16 * * *"
 # 执行工作列表
 jobs:
   # 执行的任务（自动创建issuse）
